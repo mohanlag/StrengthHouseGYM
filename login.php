@@ -26,9 +26,18 @@ if(password_verify($password, $user['password'])){
         header("Location: trainer_dashboard.php");
         exit();
     } else {
+<<<<<<< HEAD
         header("Location: index.html");
         exit();
     }
+=======
+        header("Location: member_dashboard.php");
+        exit();
+    }
+
+  
+
+>>>>>>> e82e57d (New_Final)
     
 }
 

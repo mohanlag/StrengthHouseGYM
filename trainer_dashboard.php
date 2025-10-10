@@ -23,7 +23,11 @@ $clientsTableExists = false;
 
 try {
     // Get trainer profile
+<<<<<<< HEAD
     $stmt = $conn->prepare("SELECT * FROM users WHERE id = ?");
+=======
+    $stmt = $conn->prepare("SELECT * FROM trainers WHERE id = ?");
+>>>>>>> e82e57d (New_Final)
     $stmt->execute([$_SESSION['user_id']]);
     $trainer = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -151,7 +155,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['create_class'])) {
                     </div>
                     <div class="user-details">
                         <h3><?php echo htmlspecialchars($trainer['fullname']); ?></h3>
+<<<<<<< HEAD
                         <p><?php echo htmlspecialchars($trainer['specialization'] ?? 'Certified Trainer'); ?></p>
+=======
+                        <p class="text-gray-500">
+						<?= htmlspecialchars($trainer['title'] ?? $trainer['specialty'] ?? 'Trainer') ?>
+						</p>
+>>>>>>> e82e57d (New_Final)
                     </div>
                 </div>
                 <div class="date-display">

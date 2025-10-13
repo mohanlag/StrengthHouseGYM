@@ -1,0 +1,245 @@
+:root {
+    --primary: #2c3e50;
+    --secondary: #3498db;
+    --accent: #e74c3c;
+    --success: #2ecc71;
+    --warning: #f39c12;
+    --light: #ecf0f1;
+    --dark: #2c3e50;
+}
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Container Layout */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background: var(--primary);
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.meta {
+    color: var(--light);
+    margin-bottom: 1rem;
+}
+
+nav a {
+    color: var(--light);
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--secondary);
+}
+
+/* Main Dashboard */
+main {
+    padding: 2rem 0;
+}
+
+main h2 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+/* Sections Grid - force row-wise layout for all cards */
+.sections {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* two cards per row */
+    gap: 2rem 1.5rem; /* vertical 2rem, horizontal 1.5rem */
+    margin-top: 2rem;
+}
+
+.card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 4px solid var(--secondary);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    min-height: 250px; /* ensures enough vertical space */
+}
+
+/* Card Headers */
+.card h3 {
+    display: flex;
+    align-items: center;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--light);
+    padding-bottom: 0.5rem;
+}
+
+.card h3 i {
+    color: var(--secondary);
+    margin-right: 0.5rem;
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.stat-card {
+    background: white;
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-top: 4px solid var(--secondary);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.stat-card i {
+    font-size: 2rem;
+    color: var(--secondary);
+}
+
+/* Two-column grid inside cards */
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+table th {
+    background: var(--primary);
+    color: white;
+    padding: 0.75rem;
+    text-align: left;
+}
+
+table td {
+    padding: 0.75rem;
+    border-bottom: 1px solid var(--light);
+}
+
+table tr:hover {
+    background: #f8f9fa;
+}
+
+/* Status tags */
+.status-pending {
+    background: #fff3cd;
+    color: #856404;
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+}
+
+.status-read {
+    background: #d4edda;
+    color: #155724;
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--secondary);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    transition: 0.3s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.btn:hover {
+    background: #2980b9;
+}
+
+/* Small Buttons */
+.btn-small {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+}
+
+/* Forms in Cards */
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+form input, form select {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    flex: 1 1 150px;
+}
+
+/* Footer */
+footer {
+    background: var(--dark);
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+/* Responsive Fixes */
+@media(max-width:1024px) {
+    .sections {
+        grid-template-columns: 1fr; /* stack all cards vertically on smaller screens */
+    }
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+    form input, form select {
+        flex: 1 1 100%;
+    }
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="password"],
+form select {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-family: inherit;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    box-sizing: border-box;
+}

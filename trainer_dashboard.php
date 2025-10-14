@@ -409,6 +409,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['create_class'])) {
                                                 <?php echo $class['class_date'] >= date('Y-m-d') ? 'Upcoming' : 'Completed'; ?>
                                             </span>
                                         </td>
+                                        <td>
+                                            <a href="edit_class.php?id=<?php echo $class['id']; ?>" class="btn btn-small">Edit</a>
+                                            <a href="delete_class.php?id=<?php echo $class['id']; ?>" class="btn btn-small" style="background: #e74c3c;" onclick="return confirm('Delete this class?')">Delete</a>
+                                        </td>
                                     </tr>
                                     <?php endforeach; ?>
                                 </tbody>
